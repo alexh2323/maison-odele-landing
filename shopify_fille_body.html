@@ -1,0 +1,279 @@
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Montserrat:wght@600&display=swap">
+<style>
+
+/* Mobile d'abord : défilé de tenues portées en ouverture, promesse, formulaire, galerie 2 colonnes, bouton collé en bas. Un seul thème clair, voulu. */
+#mo{
+  color-scheme:light;
+  --bg:#ffffff; --fg:#2a1d24; --muted:#77666f; --line:#efe4e9;
+  --rose:#b23a64; --rose-soft:#fbeef3; --on-rose:#ffffff;
+  --display:"Jost", "Helvetica Neue", Arial, sans-serif;
+  --body:"Jost", "Helvetica Neue", Arial, sans-serif;
+}
+#mo{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55;padding-bottom:84px}
+#mo .wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));max-width:1080px;margin:0 auto}
+#mo .bar{background:var(--rose);color:var(--on-rose);text-align:center;font-size:.82rem;font-weight:500;padding-block:8px}
+#mo .top{display:flex;justify-content:center;padding-block:14px}
+#mo .logo{font-family:"Montserrat",var(--display);font-size:1.4rem;font-weight:600;letter-spacing:0;text-transform:none;color:#2e3440}
+#mo .logo i{color:var(--rose);font-style:normal}
+#mo .brand{text-align:center}#mo .sub{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+#mo .runway{overflow:hidden}
+#mo .lane{display:flex;gap:12px;width:max-content;animation:roll 45s linear infinite}
+#mo .fit{scroll-snap-align:start}
+@keyframes roll{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){#mo .lane{animation:none}}
+#mo .look{margin:0;width:170px;flex:none}
+#mo .look img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;border-radius:10px;background:var(--rose-soft)}
+#mo .look figcaption{font-size:.74rem;color:var(--muted);margin-top:6px}
+#mo .look figcaption b{display:block;color:var(--fg);font-size:.86rem;font-weight:600;margin-bottom:3px}
+#mo .look ul{list-style:none;margin:0;padding:0;display:grid;gap:1px}
+#mo .look li,#mo .tot{display:flex;justify-content:space-between;gap:8px;font-variant-numeric:tabular-nums}
+#mo .tot{margin:4px 0 0;padding-top:4px;border-top:1px solid var(--line);color:var(--fg);font-weight:600}
+#mo .hero{padding-block:24px 8px;display:grid;gap:14px}
+#mo h1{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:clamp(1.9rem,7.5vw,3.4rem);line-height:1.1;letter-spacing:.01em;margin:0;text-wrap:balance}
+#mo h1 em{color:var(--rose);font-style:normal}
+#mo .bf{margin:0;padding:12px 14px;border-radius:10px;background:var(--rose-soft);font-size:.98rem}#mo .bf b{color:var(--rose)}
+#mo .lede{margin:0;font-size:1.06rem;color:var(--muted);max-width:56ch;text-wrap:pretty}
+#mo .perks{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:8px;font-weight:500}
+#mo .perks li{display:flex;gap:10px;align-items:flex-start}
+#mo .perks b{color:var(--rose)}
+#mo .perks li::before{content:"";flex:none;width:18px;height:18px;margin-top:3px;border-radius:50%;background:var(--rose-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M5 9.5l2.5 2.5L13 6.5' fill='none' stroke='%23b23a64' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/18px no-repeat}
+#mo form{background:var(--rose-soft);border-radius:16px;padding:20px;display:grid;gap:12px;margin-block:12px 8px}
+#mo form h2{font-family:var(--display);font-weight:600;font-size:1.45rem;margin:0;line-height:1.2}
+#mo form p{margin:0;font-size:.92rem;color:var(--muted)}
+#mo label{display:block;font-size:.82rem;font-weight:500;margin-bottom:4px}
+#mo input{width:100%;box-sizing:border-box;font:inherit;font-size:16px;padding:14px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--fg)}
+#mo input:focus-visible,#mo button:focus-visible,#mo .cta:focus-visible{outline:2px solid var(--rose);outline-offset:2px}
+#mo button,#mo .cta{display:block;width:100%;text-align:center;text-decoration:none;font:inherit;font-weight:700;font-size:1rem;padding:16px;border:0;border-radius:999px;background:var(--rose);color:var(--on-rose);cursor:pointer;min-height:52px;box-sizing:border-box}
+#mo .ok{font-weight:700;color:var(--rose)}
+#mo .fine{font-size:.76rem!important}
+#mo .q{padding-block:36px 8px;display:grid;gap:10px}
+#mo .q h2,#mo .drop h2,#mo .why h2{font-family:var(--display);font-weight:600;font-size:clamp(1.5rem,5.5vw,2.2rem);line-height:1.15;margin:0;text-wrap:balance}
+#mo .q p{margin:0;color:var(--muted);max-width:58ch}
+#mo .drop{padding-block:20px 8px}
+#mo .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+#mo .look.g{width:auto}
+#mo .look.g figcaption{font-size:.8rem}
+#mo .why{padding-block:20px 32px;display:grid;gap:18px}
+#mo .why div{display:grid;gap:4px}
+#mo .why h3{margin:0;font-size:1.05rem}
+#mo .why p{margin:0;color:var(--muted)}
+#mo footer{border-top:1px solid var(--line);padding-block:20px;color:var(--muted);font-size:.8rem;text-align:center}
+#mo .sticky{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);padding-top:10px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));z-index:20}
+@media (min-width:760px){
+  #mo .look{width:210px}
+  #mo .hero{grid-template-columns:1.1fr .9fr;align-items:start;gap:40px;padding-block:40px 16px}
+  #mo .hero form{grid-row:span 3;margin:0}
+  #mo .grid{grid-template-columns:repeat(4,1fr);gap:16px}
+  #mo .why{grid-template-columns:repeat(3,1fr)}
+  #mo .why h2{grid-column:1/-1}
+  #mo .sticky{display:none}
+  #mo{padding-bottom:0}
+}
+#mo .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+#mo .card{margin:0;min-width:0}
+#mo .ph{position:relative}
+#mo .ph img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;border-radius:8px;background:var(--rose-soft)}
+#mo .px{position:absolute;right:6px;bottom:6px;background:#fff;color:var(--fg);font-weight:700;font-size:.78rem;padding:3px 7px;border-radius:999px;font-variant-numeric:tabular-nums;box-shadow:0 1px 4px rgba(42,29,36,.18)}
+#mo .px s{display:none}
+#mo .card figcaption{font-size:.78rem;font-weight:500;margin-top:5px;line-height:1.25}
+#mo .card figcaption span{display:block;color:var(--muted);font-weight:400;font-size:.72rem}
+#mo .drop .g3{margin-top:16px}
+@media (min-width:760px){#mo .g3{gap:14px}#mo .px{font-size:.9rem;right:10px;bottom:10px;padding:4px 10px}#mo .card figcaption{font-size:.9rem}}
+
+#mo .fit{margin:0;width:230px;flex:none;min-width:0}
+#mo .grid .fit{width:auto}
+#mo .fit>img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;border-radius:10px;background:var(--rose-soft)}
+#mo .fit figcaption{display:flex;justify-content:space-between;align-items:baseline;gap:6px;margin:6px 0 6px;font-size:.84rem;font-weight:600}
+#mo .fit figcaption span{color:var(--rose);font-variant-numeric:tabular-nums;white-space:nowrap}
+#mo .pcs{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
+#mo .pc{position:relative;margin:0;background:#f6f4f5;border-radius:6px;overflow:hidden}
+#mo .pc img{display:block;width:100%;aspect-ratio:1;object-fit:contain;mix-blend-mode:multiply}
+#mo .pc b{position:absolute;right:3px;bottom:3px;background:#fff;color:var(--fg);font-size:.62rem;font-weight:700;padding:1px 5px;border-radius:999px;font-variant-numeric:tabular-nums;box-shadow:0 1px 3px rgba(42,29,36,.18)}
+#mo .grid{grid-template-columns:1fr 1fr;gap:14px}
+@media (min-width:760px){#mo .fit{width:240px}#mo .grid{grid-template-columns:repeat(4,1fr)}#mo .pc b{font-size:.7rem}}
+#mo .ph{position:relative}
+#mo .ph>img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;border-radius:10px;background:var(--rose-soft)}
+#mo .tag{position:absolute;display:flex;align-items:center;transform:translateY(-50%);pointer-events:none}
+#mo .tag.l{flex-direction:row-reverse;transform:translate(-100%,-50%)}
+#mo .tag.r{flex-direction:row}
+#mo .tag i{width:5px;height:5px;border-radius:50%;background:#fff;box-shadow:0 0 0 2px rgba(42,29,36,.25);flex:none}
+#mo .tag u{width:14px;height:1px;background:rgba(255,255,255,.9);flex:none}
+#mo .tag b{background:rgba(255,255,255,.88);color:var(--fg);font-size:.58rem;font-weight:600;padding:1px 5px;border-radius:999px;white-space:nowrap;font-variant-numeric:tabular-nums;backdrop-filter:blur(2px)}
+@media (min-width:760px){#mo .tag b{font-size:.68rem}}
+#mo .hero{padding-block:14px 16px;gap:12px}
+#mo .hero h1{font-size:clamp(1.55rem,6.6vw,2.8rem);line-height:1.12}
+#mo .hero form{margin:0;padding:14px;gap:8px;border-radius:14px}
+#mo .fl{font-size:.92rem!important;color:var(--fg)!important}
+#mo .row{display:flex;gap:8px}
+#mo .row input{flex:1;min-width:0;padding:13px 12px}
+#mo .row button{width:auto;flex:none;padding:0 18px;min-height:48px}
+#mo .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+#mo .hero2{padding-block:20px 0;display:grid;gap:14px}
+#mo .fit figcaption{font-weight:500;font-size:.8rem}
+#mo .fit figcaption span{color:var(--muted);font-weight:400}
+@media (min-width:760px){#mo .hero{grid-template-columns:1fr;max-width:720px;text-align:center}#mo .hero form{grid-row:auto}#mo .row{max-width:520px;margin:0 auto;width:100%}}
+#mo .sw{margin:4px 0 12px;color:var(--muted);font-size:.85rem}
+#mo .car{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;gap:16px}
+#mo .car::-webkit-scrollbar{display:none}
+#mo .slide{flex:0 0 100%;scroll-snap-align:center;min-width:0}
+#mo .ex{position:relative;width:100%;max-width:520px;margin:0 auto;aspect-ratio:1/1.08}
+#mo .ex>svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+#mo .ex .main{position:absolute;left:22%;top:0;width:56%;aspect-ratio:3/4;object-fit:cover;object-position:top;border-radius:10px;background:var(--rose-soft)}
+#mo .pce{position:absolute;width:18%;margin:0;text-align:center}
+#mo .pce img{display:block;width:100%;aspect-ratio:1;object-fit:contain;background:#f6f4f5;border-radius:8px;mix-blend-mode:multiply}
+#mo .pce figcaption{font-size:.6rem;color:var(--muted);margin-top:2px;font-variant-numeric:tabular-nums;white-space:nowrap}
+#mo .slide>p{display:flex;justify-content:space-between;max-width:520px;margin:6px auto 0;font-weight:600;font-size:.95rem}
+#mo .slide>p span{color:var(--muted);font-weight:400}
+#mo .nav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:12px}
+#mo .arw{width:40px;min-height:40px;padding:0;border-radius:50%;background:var(--rose-soft);color:var(--rose);font-size:1.4rem;line-height:1}
+#mo .dots{display:flex;gap:6px}
+#mo .dots i{width:7px;height:7px;border-radius:50%;background:var(--line)}
+#mo .dots i.on{background:var(--rose)}
+#mo .tp{overflow:hidden;padding-block:24px 20px;border-bottom:1px solid var(--line)}
+#mo .tp-hd{display:flex;flex-direction:column;align-items:center;gap:8px;padding:0 16px 16px}
+#mo .tp-logo{display:flex;align-items:center;gap:6px;font-size:1.15rem;font-weight:700;color:#191c1f;letter-spacing:-.01em}
+#mo .tp-logo svg{width:22px;height:22px}
+#mo .tp-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center}
+#mo .tp-exc{font-weight:700;font-size:1rem;color:#191c1f}
+#mo .tp-bar{display:flex;gap:2px}
+#mo .tp-bar i{display:block;width:26px;height:26px;background:#00b67a;position:relative}
+#mo .tp-bar i::after{content:"★";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px}
+#mo .tp-sub{font-size:.85rem;color:#737373}
+#mo .tp-trk{display:flex;gap:14px;width:max-content;animation:rvs 50s linear infinite}
+@keyframes rvs{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){#mo .tp-trk{animation:none}}
+#mo .rv{width:320px;flex:none;background:#f7f7f7;border-radius:10px;padding:18px 20px;display:grid;gap:10px}
+#mo .rv-top{display:flex;justify-content:space-between;align-items:center}
+#mo .rv-stars{display:flex;gap:2px}
+#mo .rv-stars i{display:block;width:22px;height:22px;background:#00b67a;position:relative}
+#mo .rv-stars i::after{content:"★";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px}
+#mo .rv-stars i.h{background:#dcdce6}
+#mo .rv-stars i.h::after{content:"☆"}
+#mo .rv-date{font-size:.78rem;color:#737373}
+#mo .rv-title{font-weight:700;font-size:.95rem;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#mo .rv-txt{font-size:.88rem;line-height:1.5;color:#737373}
+#mo .rv-who{font-size:.88rem;font-weight:600;color:#191c1f;margin-top:auto}
+#mo .ugc{padding-block:28px 24px}
+#mo .ugc h2{font-family:var(--display);font-weight:600;font-size:clamp(1.3rem,4.5vw,1.8rem);margin:0 0 16px;text-align:center;text-wrap:balance}
+#mo .ugc-track{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;scrollbar-width:none}
+#mo .ugc-track::-webkit-scrollbar{display:none}
+#mo .ugc-inner{display:flex;gap:10px;width:max-content;animation:ugcroll 50s linear infinite}
+#mo .ugc-track:hover .ugc-inner,#mo .ugc-track:active .ugc-inner{animation-play-state:paused}
+@keyframes ugcroll{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){#mo .ugc-inner{animation:none}}
+#mo .ugc-inner figure{margin:0;width:180px;flex:none;scroll-snap-align:start}
+#mo .ugc-inner img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;border-radius:8px;background:var(--rose-soft)}
+#mo .ugc-inner figcaption{font-size:.72rem;color:var(--muted);margin-top:5px;text-align:center}
+@media(max-width:520px){#mo .ugc-inner figure{width:150px}}
+#mo .team{padding-block:36px 28px;border-top:1px solid var(--line)}
+#mo .team h2{font-family:var(--display);font-weight:600;font-size:clamp(1.3rem,4.5vw,1.8rem);margin:0 0 20px;text-align:center;text-wrap:balance}
+#mo .team-stack{position:relative;width:min(420px,100%);aspect-ratio:16/11;margin:0 auto}
+#mo .team-stack figure{margin:0;position:absolute;left:0;top:0;width:100%;border-radius:10px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.1);transition:transform .8s cubic-bezier(.4,0,.2,1),opacity .8s cubic-bezier(.4,0,.2,1);will-change:transform,opacity}
+#mo .team-stack img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
+#mo .team-stack figcaption{position:absolute;bottom:0;left:0;right:0;padding:10px 14px;background:linear-gradient(transparent,rgba(0,0,0,.5));color:#fff;font-size:.75rem;font-weight:500;opacity:0;transition:opacity .5s}
+#mo .team-stack figure.front{z-index:3;transform:translateX(0) scale(1);opacity:1}
+#mo .team-stack figure.front figcaption{opacity:1}
+#mo .team-stack figure.back-l{z-index:1;transform:translateX(-12%) translateY(8%) scale(.88);opacity:.6}
+#mo .team-stack figure.back-r{z-index:2;transform:translateX(12%) translateY(8%) scale(.88);opacity:.6}
+@media(prefers-reduced-motion:reduce){#mo .team-stack figure{transition:none}}
+/*prix*/#mo .slide>p{flex-direction:column;align-items:flex-start;gap:2px}#mo .slide>p span{white-space:nowrap}#mo .fit figcaption span s{color:var(--muted);margin-right:4px}#mo .fit figcaption span b{color:var(--rose);font-weight:700}#mo .slide>p span s{color:var(--muted);margin-right:6px}#mo .slide>p span b{color:var(--rose);font-weight:700}#mo .slide>p span em{font-style:normal;font-weight:700;font-size:.72rem;color:#fff;background:var(--rose);border-radius:999px;padding:2px 7px;margin-left:6px;vertical-align:2px}/*fin prix*/
+/* intégration Shopify (thème Horizon) : landing pleine largeur, en-tête, pied de page et titre du thème masqués */
+#mo{width:100vw;max-width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);position:relative}
+#mo *{box-sizing:border-box}#mo h1,#mo h2,#mo h3,#mo p,#mo button,#mo label{letter-spacing:normal;text-transform:none}
+.shopify-section-group-header-group,.shopify-section-group-footer-group{display:none!important}
+.shopify-section:has(#mo) h1:not(#mo h1){display:none!important}
+.shopify-section:has(#mo),.shopify-section:has(#mo) *:has(#mo){padding-top:0!important;padding-bottom:0!important;margin-top:0!important;margin-bottom:0!important;max-width:none!important}
+</style>
+<div id="mo">
+<div class="bar">Black Friday · notre seule promo de l'année · −20 % pour les inscrites</div>
+<header class="wrap top"><div class="brand"><div class="logo">Maison <i>Odèle</i></div><div class="sub">La collection fille</div></div></header>
+
+<section class="wrap hero">
+  <h1>Black Friday&nbsp;: <em>−20&nbsp;%</em> sur les tenues de ta fille.</h1>
+  <form id="f" method="post" action="/contact#f" accept-charset="UTF-8" novalidate><input type="hidden" name="form_type" value="customer"><input type="hidden" name="utf8" value="✓"><input type="hidden" name="contact[tags]" value="liste-attente-bf,newsletter,fille">
+    <p class="fl">Laisse ton email, ton code −20 % arrive le jour de la vente.</p>
+    <div class="row"><label class="sr" for="email">Ton email</label><input id="email" name="contact[email]" type="email" inputmode="email" autocomplete="email" placeholder="ton@email.fr" required><button type="submit" id="go">Je réserve</button></div>
+    <p class="ok" id="ok" hidden>C'est noté. Surveille ta boîte mail le jour de la vente.</p>
+    <p class="fine">Zéro spam · 24 h d'accès avant tout le monde · du 6 au 14 ans</p>
+  </form>
+</section>
+
+<div class="runway" aria-label="Défilé des tenues"><div class="lane"><article class="fit"><div class="ph"><img src="https://alexh2323.github.io/maison-odele-landing/img/021803b3162f.jpg" alt="Tenue fille Le look Jeanne" loading="lazy"></div><figcaption>Le look Jeanne<span><s>159,75 €</s> <b>127,80 €</b></span></figcaption></article><article class="fit"><div class="ph"><img src="https://alexh2323.github.io/maison-odele-landing/img/0ddd0f040542.jpg" alt="Tenue fille Le look Louise" loading="lazy"></div><figcaption>Le look Louise<span><s>149,75 €</s> <b>119,80 €</b></span></figcaption></article><article class="fit"><div class="ph"><img src="https://alexh2323.github.io/maison-odele-landing/img/4fbca4d7f859.jpg" alt="Tenue fille Le look Alice" loading="lazy"></div><figcaption>Le look Alice<span><s>163,75 €</s> <b>131,00 €</b></span></figcaption></article><article class="fit"><div class="ph"><img src="https://alexh2323.github.io/maison-odele-landing/img/a24647239e75.jpg" alt="Tenue fille Le look Rose" loading="lazy"></div><figcaption>Le look Rose<span><s>129,75 €</s> <b>103,80 €</b></span></figcaption></article><article class="fit"><div class="ph"><img src="https://alexh2323.github.io/maison-odele-landing/img/d2756eb1bced.jpg" alt="Tenue fille Le look Inès" loading="lazy"></div><figcaption>Le look Inès<span><s>158,75 €</s> <b>127,00 €</b></span></figcaption></article><article class="fit"><div class="ph"><img src="https://alexh2323.github.io/maison-odele-landing/img/f87e906c3b24.jpg" alt="Tenue fille Le look Léonie" loading="lazy"></div><figcaption>Le look Léonie<span><s>164,75 €</s> <b>131,80 €</b></span></figcaption></article><article class="fit"><div class="ph"><img src="https://alexh2323.github.io/maison-odele-landing/img/c226f1028655.jpg" alt="Tenue fille Le look Adèle" loading="lazy"></div><figcaption>Le look Adèle<span><s>170,75 €</s> <b>136,60 €</b></span></figcaption></article><article class="fit"><div class="ph"><img src="https://alexh2323.github.io/maison-odele-landing/img/bf9d8cd7b710.jpg" alt="Tenue fille Le look Margaux" loading="lazy"></div><figcaption>Le look Margaux<span><s>151,75 €</s> <b>121,40 €</b></span></figcaption></article><article class="fit"><div class="ph"><img src="https://alexh2323.github.io/maison-odele-landing/img/185c1917255c.jpg" alt="Tenue fille Le look Lila" loading="lazy"></div><figcaption>Le look Lila<span><s>143,80 €</s> <b>115,04 €</b></span></figcaption></article><article class="fit"><div class="ph"><img src="https://alexh2323.github.io/maison-odele-landing/img/30ea30119204.jpg" alt="Tenue fille Le look Capucine" loading="lazy"></div><figcaption>Le look Capucine<span><s>153,75 €</s> <b>123,00 €</b></span></figcaption></article><article class="fit"><div class="ph"><img src="https://alexh2323.github.io/maison-odele-landing/img/4b8e5d0aa07d.jpg" alt="Tenue fille Le look Mila" loading="lazy"></div><figcaption>Le look Mila<span><s>137,75 €</s> <b>110,20 €</b></span></figcaption></article><article class="fit"><div class="ph"><img src="https://alexh2323.github.io/maison-odele-landing/img/985853f82d8d.jpg" alt="Tenue fille Le look Agathe" loading="lazy"></div><figcaption>Le look Agathe<span><s>116,75 €</s> <b>93,40 €</b></span></figcaption></article><article class="fit"><div class="ph"><img src="https://alexh2323.github.io/maison-odele-landing/img/021803b3162f.jpg" alt="Tenue fille Le look Jeanne" loading="lazy"></div><figcaption>Le look Jeanne<span><s>159,75 €</s> <b>127,80 €</b></span></figcaption></article><article class="fit"><div class="ph"><img src="https://alexh2323.github.io/maison-odele-landing/img/0ddd0f040542.jpg" alt="Tenue fille Le look Louise" loading="lazy"></div><figcaption>Le look Louise<span><s>149,75 €</s> <b>119,80 €</b></span></figcaption></article><article class="fit"><div class="ph"><img src="https://alexh2323.github.io/maison-odele-landing/img/4fbca4d7f859.jpg" alt="Tenue fille Le look Alice" loading="lazy"></div><figcaption>Le look Alice<span><s>163,75 €</s> <b>131,00 €</b></span></figcaption></article><article class="fit"><div class="ph"><img src="https://alexh2323.github.io/maison-odele-landing/img/a24647239e75.jpg" alt="Tenue fille Le look Rose" loading="lazy"></div><figcaption>Le look Rose<span><s>129,75 €</s> <b>103,80 €</b></span></figcaption></article><article class="fit"><div class="ph"><img src="https://alexh2323.github.io/maison-odele-landing/img/d2756eb1bced.jpg" alt="Tenue fille Le look Inès" loading="lazy"></div><figcaption>Le look Inès<span><s>158,75 €</s> <b>127,00 €</b></span></figcaption></article><article class="fit"><div class="ph"><img src="https://alexh2323.github.io/maison-odele-landing/img/f87e906c3b24.jpg" alt="Tenue fille Le look Léonie" loading="lazy"></div><figcaption>Le look Léonie<span><s>164,75 €</s> <b>131,80 €</b></span></figcaption></article><article class="fit"><div class="ph"><img src="https://alexh2323.github.io/maison-odele-landing/img/c226f1028655.jpg" alt="Tenue fille Le look Adèle" loading="lazy"></div><figcaption>Le look Adèle<span><s>170,75 €</s> <b>136,60 €</b></span></figcaption></article><article class="fit"><div class="ph"><img src="https://alexh2323.github.io/maison-odele-landing/img/bf9d8cd7b710.jpg" alt="Tenue fille Le look Margaux" loading="lazy"></div><figcaption>Le look Margaux<span><s>151,75 €</s> <b>121,40 €</b></span></figcaption></article><article class="fit"><div class="ph"><img src="https://alexh2323.github.io/maison-odele-landing/img/185c1917255c.jpg" alt="Tenue fille Le look Lila" loading="lazy"></div><figcaption>Le look Lila<span><s>143,80 €</s> <b>115,04 €</b></span></figcaption></article><article class="fit"><div class="ph"><img src="https://alexh2323.github.io/maison-odele-landing/img/30ea30119204.jpg" alt="Tenue fille Le look Capucine" loading="lazy"></div><figcaption>Le look Capucine<span><s>153,75 €</s> <b>123,00 €</b></span></figcaption></article><article class="fit"><div class="ph"><img src="https://alexh2323.github.io/maison-odele-landing/img/4b8e5d0aa07d.jpg" alt="Tenue fille Le look Mila" loading="lazy"></div><figcaption>Le look Mila<span><s>137,75 €</s> <b>110,20 €</b></span></figcaption></article><article class="fit"><div class="ph"><img src="https://alexh2323.github.io/maison-odele-landing/img/985853f82d8d.jpg" alt="Tenue fille Le look Agathe" loading="lazy"></div><figcaption>Le look Agathe<span><s>116,75 €</s> <b>93,40 €</b></span></figcaption></article></div></div>
+
+<section class="tp" aria-label="Avis clients">
+  <div class="tp-hd"><span class="tp-logo"><svg viewBox="0 0 24 24" fill="none"><path d="M12 1.5l3.09 6.26L22 8.77l-5 4.87 1.18 6.86L12 17.27 5.82 20.5 7 13.64l-5-4.87 6.91-1.01z" fill="#00b67a"/></svg>Trustpilot</span><div class="tp-row"><span class="tp-exc">Excellent</span><div class="tp-bar"><i></i><i></i><i></i><i></i><i></i></div><span class="tp-sub">4,8 sur 5 · basé sur <b>847 avis</b></span></div></div>
+  <div class="tp-trk">
+    <div class="rv"><div class="rv-top"><div class="rv-stars"><i></i><i></i><i></i><i></i><i></i></div><span class="rv-date">14/10/2026</span></div><div class="rv-title">Ma fille adore son look</div><div class="rv-txt">Le cardigan crème avec la jupe écossaise, elle ne veut plus rien porter d'autre. Tout est déjà assorti, je n'ai rien eu à chercher.</div><div class="rv-who">Claire MOREAU</div></div>
+    <div class="rv"><div class="rv-top"><div class="rv-stars"><i></i><i></i><i></i><i></i><i></i></div><span class="rv-date">02/11/2026</span></div><div class="rv-title">Parfait pour l'école</div><div class="rv-txt">Manteau bien chaud et coupé large, elle peut mettre un gros pull dessous. Les collants épais vont pile avec.</div><div class="rv-who">Émilie GARNIER</div></div>
+    <div class="rv"><div class="rv-top"><div class="rv-stars"><i></i><i></i><i></i><i></i><i></i></div><span class="rv-date">27/10/2026</span></div><div class="rv-title">Les tailles sont justes</div><div class="rv-txt">J'ai pris la taille de son âge, c'est parfait, et il reste un peu de marge pour l'hiver prochain.</div><div class="rv-who">Laure DUVAL</div></div>
+    <div class="rv"><div class="rv-top"><div class="rv-stars"><i></i><i></i><i></i><i></i><i></i></div><span class="rv-date">21/10/2026</span></div><div class="rv-title">Joli paquet, joli cadeau</div><div class="rv-txt">Offert à ma nièce pour ses 8 ans, la boîte fait son effet. Ma sœur m'a demandé le lien.</div><div class="rv-who">Hélène ROUX</div></div>
+    <div class="rv"><div class="rv-top"><div class="rv-stars"><i></i><i></i><i></i><i></i><i class="h"></i></div><span class="rv-date">18/10/2026</span></div><div class="rv-title">Très mignon</div><div class="rv-txt">Le pull rose à col claudine est adorable. Une petite semaine de livraison, mais ça valait la peine.</div><div class="rv-who">Sarah BENOIT</div></div>
+    <div class="rv"><div class="rv-top"><div class="rv-stars"><i></i><i></i><i></i><i></i><i></i></div><span class="rv-date">25/10/2026</span></div><div class="rv-title">Les deux sœurs assorties</div><div class="rv-txt">J'ai pris le même pull bordeaux pour mes deux filles, photo de famille réussie.</div><div class="rv-who">Anne-Sophie PETIT</div></div>
+    <div class="rv"><div class="rv-top"><div class="rv-stars"><i></i><i></i><i></i><i></i><i></i></div><span class="rv-date">11/10/2026</span></div><div class="rv-title">Matière douce</div><div class="rv-txt">La maille ne gratte pas, ce qui est rare. Ma fille a la peau sensible et elle le porte toute la journée.</div><div class="rv-who">Julie FONTAINE</div></div>
+    <div class="rv"><div class="rv-top"><div class="rv-stars"><i></i><i></i><i></i><i></i><i></i></div><span class="rv-date">07/10/2026</span></div><div class="rv-title">Le matin est plus simple</div><div class="rv-txt">On prend le look du jour et c'est fini, plus de bataille pour s'habiller.</div><div class="rv-who">Nathalie GIRARD</div></div>
+    <div class="rv"><div class="rv-top"><div class="rv-stars"><i></i><i></i><i></i><i></i><i></i></div><span class="rv-date">14/10/2026</span></div><div class="rv-title">Ma fille adore son look</div><div class="rv-txt">Le cardigan crème avec la jupe écossaise, elle ne veut plus rien porter d'autre. Tout est déjà assorti, je n'ai rien eu à chercher.</div><div class="rv-who">Claire MOREAU</div></div>
+    <div class="rv"><div class="rv-top"><div class="rv-stars"><i></i><i></i><i></i><i></i><i></i></div><span class="rv-date">02/11/2026</span></div><div class="rv-title">Parfait pour l'école</div><div class="rv-txt">Manteau bien chaud et coupé large, elle peut mettre un gros pull dessous. Les collants épais vont pile avec.</div><div class="rv-who">Émilie GARNIER</div></div>
+    <div class="rv"><div class="rv-top"><div class="rv-stars"><i></i><i></i><i></i><i></i><i></i></div><span class="rv-date">27/10/2026</span></div><div class="rv-title">Les tailles sont justes</div><div class="rv-txt">J'ai pris la taille de son âge, c'est parfait, et il reste un peu de marge pour l'hiver prochain.</div><div class="rv-who">Laure DUVAL</div></div>
+    <div class="rv"><div class="rv-top"><div class="rv-stars"><i></i><i></i><i></i><i></i><i></i></div><span class="rv-date">21/10/2026</span></div><div class="rv-title">Joli paquet, joli cadeau</div><div class="rv-txt">Offert à ma nièce pour ses 8 ans, la boîte fait son effet. Ma sœur m'a demandé le lien.</div><div class="rv-who">Hélène ROUX</div></div>
+    <div class="rv"><div class="rv-top"><div class="rv-stars"><i></i><i></i><i></i><i></i><i class="h"></i></div><span class="rv-date">18/10/2026</span></div><div class="rv-title">Très mignon</div><div class="rv-txt">Le pull rose à col claudine est adorable. Une petite semaine de livraison, mais ça valait la peine.</div><div class="rv-who">Sarah BENOIT</div></div>
+    <div class="rv"><div class="rv-top"><div class="rv-stars"><i></i><i></i><i></i><i></i><i></i></div><span class="rv-date">25/10/2026</span></div><div class="rv-title">Les deux sœurs assorties</div><div class="rv-txt">J'ai pris le même pull bordeaux pour mes deux filles, photo de famille réussie.</div><div class="rv-who">Anne-Sophie PETIT</div></div>
+    <div class="rv"><div class="rv-top"><div class="rv-stars"><i></i><i></i><i></i><i></i><i></i></div><span class="rv-date">11/10/2026</span></div><div class="rv-title">Matière douce</div><div class="rv-txt">La maille ne gratte pas, ce qui est rare. Ma fille a la peau sensible et elle le porte toute la journée.</div><div class="rv-who">Julie FONTAINE</div></div>
+    <div class="rv"><div class="rv-top"><div class="rv-stars"><i></i><i></i><i></i><i></i><i></i></div><span class="rv-date">07/10/2026</span></div><div class="rv-title">Le matin est plus simple</div><div class="rv-txt">On prend le look du jour et c'est fini, plus de bataille pour s'habiller.</div><div class="rv-who">Nathalie GIRARD</div></div>
+  </div>
+</section>
+
+<section class="wrap drop">
+  <h2>Ses looks d'hiver, pièce par pièce</h2>
+  <p class="sw">Fais glisser pour voir les autres tenues →</p>
+  <div class="car" id="car"><div class="slide"><div class="ex"><img class="main" src="https://alexh2323.github.io/maison-odele-landing/img/021803b3162f.jpg" alt="Tenue fille Le look Jeanne"><svg viewBox="0 0 100 108" preserveAspectRatio="none" aria-hidden="true"><path d="M20.0 29.9 C32.0 29.9 42.2 29.9 42.2 29.9" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="42.2" cy="29.9" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/><path d="M80.0 13.0 C68.0 13.0 50.0 4.5 50.0 4.5" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="50.0" cy="4.5" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/><path d="M80.0 65.7 C68.0 65.7 52.2 26.9 52.2 26.9" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="52.2" cy="26.9" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/><path d="M33.0 80.7 C33.0 70.7 46.6 57.3 46.6 49.3" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="46.6" cy="49.3" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/><path d="M67.0 80.7 C67.0 70.7 53.4 75.9 53.4 67.9" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="53.4" cy="67.9" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/></svg><figure class="pce" style="left:2%;top:19.3%"><img src="https://alexh2323.github.io/maison-odele-landing/img/df28a975e422.jpg" alt="Blouson effet fourrure"><figcaption>45,95 €</figcaption></figure><figure class="pce" style="left:80%;top:3.7%"><img src="https://alexh2323.github.io/maison-odele-landing/img/add75747217a.jpg" alt="Bonnet en maille motif losanges"><figcaption>8,95 €</figcaption></figure><figure class="pce" style="left:80%;top:52.5%"><img src="https://alexh2323.github.io/maison-odele-landing/img/62474fa16e45.jpg" alt="Pull en maille à rayures"><figcaption>22,95 €</figcaption></figure><figure class="pce" style="left:24%;top:74.7%"><img src="https://alexh2323.github.io/maison-odele-landing/img/7aa015de5730.jpg" alt="Jeans wide leg"><figcaption>25,95 €</figcaption></figure><figure class="pce" style="left:58%;top:74.7%"><img src="https://alexh2323.github.io/maison-odele-landing/img/081808161bae.jpg" alt="Bottines en cuir moutonnées"><figcaption>55,95 €</figcaption></figure></div><p>Le look Jeanne<span>Le look complet <s>159,75 €</s> <b>127,80 €</b><em>−20 %</em></span></p></div><div class="slide"><div class="ex"><img class="main" src="https://alexh2323.github.io/maison-odele-landing/img/0ddd0f040542.jpg" alt="Tenue fille Le look Louise"><svg viewBox="0 0 100 108" preserveAspectRatio="none" aria-hidden="true"><path d="M20.0 13.0 C32.0 13.0 42.2 29.9 42.2 29.9" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="42.2" cy="29.9" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/><path d="M20.0 65.7 C32.0 65.7 38.8 39.6 38.8 39.6" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="38.8" cy="39.6" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/><path d="M80.0 13.0 C68.0 13.0 52.2 26.9 52.2 26.9" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="52.2" cy="26.9" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/><path d="M80.0 65.7 C68.0 65.7 52.2 26.9 52.2 26.9" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="52.2" cy="26.9" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/><path d="M50.0 80.7 C50.0 70.7 53.4 75.9 53.4 67.9" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="53.4" cy="67.9" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/></svg><figure class="pce" style="left:2%;top:3.7%"><img src="https://alexh2323.github.io/maison-odele-landing/img/484b92117b14.jpg" alt="Manteau matelassé à capuche déperlant"><figcaption>29,95 €</figcaption></figure><figure class="pce" style="left:2%;top:52.5%"><img src="https://alexh2323.github.io/maison-odele-landing/img/83ff711f9104.jpg" alt="Sac bandoulière à rabat effet fourrure"><figcaption>22,95 €</figcaption></figure><figure class="pce" style="left:80%;top:3.7%"><img src="https://alexh2323.github.io/maison-odele-landing/img/4dcc6aa22669.jpg" alt="Chemise brodée à col claudine"><figcaption>22,95 €</figcaption></figure><figure class="pce" style="left:80%;top:52.5%"><img src="https://alexh2323.github.io/maison-odele-landing/img/f17e25105725.jpg" alt="Robe-salopette velours rayures"><figcaption>25,95 €</figcaption></figure><figure class="pce" style="left:41%;top:74.7%"><img src="https://alexh2323.github.io/maison-odele-landing/img/50a43cb7ed77.jpg" alt="Ballerines style salomé en cuir"><figcaption>47,95 €</figcaption></figure></div><p>Le look Louise<span>Le look complet <s>149,75 €</s> <b>119,80 €</b><em>−20 %</em></span></p></div><div class="slide"><div class="ex"><img class="main" src="https://alexh2323.github.io/maison-odele-landing/img/4fbca4d7f859.jpg" alt="Tenue fille Le look Alice"><svg viewBox="0 0 100 108" preserveAspectRatio="none" aria-hidden="true"><path d="M20.0 13.0 C32.0 13.0 42.2 29.9 42.2 29.9" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="42.2" cy="29.9" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/><path d="M20.0 65.7 C32.0 65.7 38.8 39.6 38.8 39.6" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="38.8" cy="39.6" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/><path d="M80.0 26.9 C68.0 26.9 52.2 26.9 52.2 26.9" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="52.2" cy="26.9" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/><path d="M33.0 80.7 C33.0 70.7 46.6 57.3 46.6 49.3" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="46.6" cy="49.3" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/><path d="M67.0 80.7 C67.0 70.7 53.4 75.9 53.4 67.9" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="53.4" cy="67.9" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/></svg><figure class="pce" style="left:2%;top:3.7%"><img src="https://alexh2323.github.io/maison-odele-landing/img/57540e042e3a.jpg" alt="Blouson bomber en matière synthétique"><figcaption>35,95 €</figcaption></figure><figure class="pce" style="left:2%;top:52.5%"><img src="https://alexh2323.github.io/maison-odele-landing/img/bd585cae9b23.jpg" alt="Sac shoulder effet fourrure"><figcaption>17,95 €</figcaption></figure><figure class="pce" style="left:80%;top:16.6%"><img src="https://alexh2323.github.io/maison-odele-landing/img/7187946a8e3b.jpg" alt="Pull en maille fermeture col effet fourrure"><figcaption>25,95 €</figcaption></figure><figure class="pce" style="left:24%;top:74.7%"><img src="https://alexh2323.github.io/maison-odele-landing/img/5c68249e6c2c.jpg" alt="Jeans wide leg animal print"><figcaption>27,95 €</figcaption></figure><figure class="pce" style="left:58%;top:74.7%"><img src="https://alexh2323.github.io/maison-odele-landing/img/563f79320f40.jpg" alt="Bottines en cuir effet mouton"><figcaption>55,95 €</figcaption></figure></div><p>Le look Alice<span>Le look complet <s>163,75 €</s> <b>131,00 €</b><em>−20 %</em></span></p></div><div class="slide"><div class="ex"><img class="main" src="https://alexh2323.github.io/maison-odele-landing/img/a24647239e75.jpg" alt="Tenue fille Le look Rose"><svg viewBox="0 0 100 108" preserveAspectRatio="none" aria-hidden="true"><path d="M20.0 29.9 C32.0 29.9 42.2 29.9 42.2 29.9" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="42.2" cy="29.9" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/><path d="M80.0 13.0 C68.0 13.0 50.0 4.5 50.0 4.5" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="50.0" cy="4.5" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/><path d="M80.0 65.7 C68.0 65.7 52.2 26.9 52.2 26.9" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="52.2" cy="26.9" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/><path d="M33.0 80.7 C33.0 70.7 46.6 57.3 46.6 49.3" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="46.6" cy="49.3" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/><path d="M67.0 80.7 C67.0 70.7 53.4 75.9 53.4 67.9" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="53.4" cy="67.9" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/></svg><figure class="pce" style="left:2%;top:19.3%"><img src="https://alexh2323.github.io/maison-odele-landing/img/3185765ddedf.jpg" alt="Blouson matelassé à capuche déperlant"><figcaption>35,95 €</figcaption></figure><figure class="pce" style="left:80%;top:3.7%"><img src="https://alexh2323.github.io/maison-odele-landing/img/2d625887028e.jpg" alt="Bonnet bob color block"><figcaption>9,95 €</figcaption></figure><figure class="pce" style="left:80%;top:52.5%"><img src="https://alexh2323.github.io/maison-odele-landing/img/7ea1850f69a3.jpg" alt="Gilet en maille col effet effet fourrure"><figcaption>27,95 €</figcaption></figure><figure class="pce" style="left:24%;top:74.7%"><img src="https://alexh2323.github.io/maison-odele-landing/img/d11f019f1ccf.jpg" alt="Pantalon wide leg en velours côtelé"><figcaption>19,95 €</figcaption></figure><figure class="pce" style="left:58%;top:74.7%"><img src="https://alexh2323.github.io/maison-odele-landing/img/a34576048aba.jpg" alt="Baskets matelassées"><figcaption>35,95 €</figcaption></figure></div><p>Le look Rose<span>Le look complet <s>129,75 €</s> <b>103,80 €</b><em>−20 %</em></span></p></div><div class="slide"><div class="ex"><img class="main" src="https://alexh2323.github.io/maison-odele-landing/img/d2756eb1bced.jpg" alt="Tenue fille Le look Inès"><svg viewBox="0 0 100 108" preserveAspectRatio="none" aria-hidden="true"><path d="M20.0 29.9 C32.0 29.9 42.2 29.9 42.2 29.9" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="42.2" cy="29.9" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/><path d="M80.0 13.0 C68.0 13.0 50.0 4.5 50.0 4.5" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="50.0" cy="4.5" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/><path d="M80.0 65.7 C68.0 65.7 52.2 26.9 52.2 26.9" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="52.2" cy="26.9" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/><path d="M33.0 80.7 C33.0 70.7 46.6 57.3 46.6 49.3" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="46.6" cy="49.3" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/><path d="M67.0 80.7 C67.0 70.7 53.4 75.9 53.4 67.9" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="53.4" cy="67.9" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/></svg><figure class="pce" style="left:2%;top:19.3%"><img src="https://alexh2323.github.io/maison-odele-landing/img/a58b70c55e29.jpg" alt="Blouson effet fourrure"><figcaption>45,95 €</figcaption></figure><figure class="pce" style="left:80%;top:3.7%"><img src="https://alexh2323.github.io/maison-odele-landing/img/ebde8203a750.jpg" alt="Bonnet en maille"><figcaption>7,95 €</figcaption></figure><figure class="pce" style="left:80%;top:52.5%"><img src="https://alexh2323.github.io/maison-odele-landing/img/2986a9084674.jpg" alt="Pull en maille poignets effet effet fourrure"><figcaption>25,95 €</figcaption></figure><figure class="pce" style="left:24%;top:74.7%"><img src="https://alexh2323.github.io/maison-odele-landing/img/afea95b00914.jpg" alt="Jupe à plis plats à carreaux avec boutons"><figcaption>22,95 €</figcaption></figure><figure class="pce" style="left:58%;top:74.7%"><img src="https://alexh2323.github.io/maison-odele-landing/img/f5bb3c748f2c.jpg" alt="Bottines doublées en cuir"><figcaption>55,95 €</figcaption></figure></div><p>Le look Inès<span>Le look complet <s>158,75 €</s> <b>127,00 €</b><em>−20 %</em></span></p></div><div class="slide"><div class="ex"><img class="main" src="https://alexh2323.github.io/maison-odele-landing/img/f87e906c3b24.jpg" alt="Tenue fille Le look Léonie"><svg viewBox="0 0 100 108" preserveAspectRatio="none" aria-hidden="true"><path d="M20.0 13.0 C32.0 13.0 42.2 29.9 42.2 29.9" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="42.2" cy="29.9" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/><path d="M20.0 65.7 C32.0 65.7 38.8 39.6 38.8 39.6" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="38.8" cy="39.6" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/><path d="M80.0 26.9 C68.0 26.9 52.2 26.9 52.2 26.9" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="52.2" cy="26.9" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/><path d="M33.0 80.7 C33.0 70.7 46.6 57.3 46.6 49.3" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="46.6" cy="49.3" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/><path d="M67.0 80.7 C67.0 70.7 53.4 75.9 53.4 67.9" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="53.4" cy="67.9" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/></svg><figure class="pce" style="left:2%;top:3.7%"><img src="https://alexh2323.github.io/maison-odele-landing/img/8d3aa3f49de3.jpg" alt="Blouson en velours côtelé effet mouton"><figcaption>45,95 €</figcaption></figure><figure class="pce" style="left:2%;top:52.5%"><img src="https://alexh2323.github.io/maison-odele-landing/img/60b1b6c244f9.jpg" alt="Sac seau à carreaux"><figcaption>19,95 €</figcaption></figure><figure class="pce" style="left:80%;top:16.6%"><img src="https://alexh2323.github.io/maison-odele-landing/img/b87b47356feb.jpg" alt="Pull en maille à rayures"><figcaption>22,95 €</figcaption></figure><figure class="pce" style="left:24%;top:74.7%"><img src="https://alexh2323.github.io/maison-odele-landing/img/f93920c85caf.jpg" alt="Jupe en velours côtelé à plis plats"><figcaption>25,95 €</figcaption></figure><figure class="pce" style="left:58%;top:74.7%"><img src="https://alexh2323.github.io/maison-odele-landing/img/a391216cfb42.jpg" alt="Ballerines cuir à boucle"><figcaption>49,95 €</figcaption></figure></div><p>Le look Léonie<span>Le look complet <s>164,75 €</s> <b>131,80 €</b><em>−20 %</em></span></p></div><div class="slide"><div class="ex"><img class="main" src="https://alexh2323.github.io/maison-odele-landing/img/c226f1028655.jpg" alt="Tenue fille Le look Adèle"><svg viewBox="0 0 100 108" preserveAspectRatio="none" aria-hidden="true"><path d="M20.0 29.9 C32.0 29.9 42.2 29.9 42.2 29.9" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="42.2" cy="29.9" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/><path d="M80.0 13.0 C68.0 13.0 50.0 4.5 50.0 4.5" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="50.0" cy="4.5" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/><path d="M80.0 65.7 C68.0 65.7 52.2 26.9 52.2 26.9" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="52.2" cy="26.9" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/><path d="M33.0 80.7 C33.0 70.7 46.6 57.3 46.6 49.3" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="46.6" cy="49.3" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/><path d="M67.0 80.7 C67.0 70.7 53.4 75.9 53.4 67.9" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="53.4" cy="67.9" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/></svg><figure class="pce" style="left:2%;top:19.3%"><img src="https://alexh2323.github.io/maison-odele-landing/img/5568ebd37526.jpg" alt="Doudoune technique longue 50% plume et 50% duvet"><figcaption>59,95 €</figcaption></figure><figure class="pce" style="left:80%;top:3.7%"><img src="https://alexh2323.github.io/maison-odele-landing/img/06ac69537ab6.jpg" alt="Bonnet en maille à rayures"><figcaption>8,95 €</figcaption></figure><figure class="pce" style="left:80%;top:52.5%"><img src="https://alexh2323.github.io/maison-odele-landing/img/002a3e80c401.jpg" alt="Pull en maille à rayures"><figcaption>25,95 €</figcaption></figure><figure class="pce" style="left:24%;top:74.7%"><img src="https://alexh2323.github.io/maison-odele-landing/img/7c32eb0ccb2f.jpg" alt="Jeans barrel fit doublure grattée"><figcaption>25,95 €</figcaption></figure><figure class="pce" style="left:58%;top:74.7%"><img src="https://alexh2323.github.io/maison-odele-landing/img/c27924f232e6.jpg" alt="Baskets montantes doublées"><figcaption>49,95 €</figcaption></figure></div><p>Le look Adèle<span>Le look complet <s>170,75 €</s> <b>136,60 €</b><em>−20 %</em></span></p></div><div class="slide"><div class="ex"><img class="main" src="https://alexh2323.github.io/maison-odele-landing/img/bf9d8cd7b710.jpg" alt="Tenue fille Le look Margaux"><svg viewBox="0 0 100 108" preserveAspectRatio="none" aria-hidden="true"><path d="M20.0 29.9 C32.0 29.9 42.2 29.9 42.2 29.9" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="42.2" cy="29.9" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/><path d="M80.0 13.0 C68.0 13.0 52.2 26.9 52.2 26.9" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="52.2" cy="26.9" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/><path d="M80.0 65.7 C68.0 65.7 52.2 26.9 52.2 26.9" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="52.2" cy="26.9" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/><path d="M33.0 80.7 C33.0 70.7 46.6 57.3 46.6 49.3" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="46.6" cy="49.3" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/><path d="M67.0 80.7 C67.0 70.7 53.4 75.9 53.4 67.9" fill="none" stroke="#b23a64" stroke-width=".35" stroke-dasharray="1 .8"/><circle cx="53.4" cy="67.9" r="1" fill="#fff" stroke="#b23a64" stroke-width=".4"/></svg><figure class="pce" style="left:2%;top:19.3%"><img src="https://alexh2323.github.io/maison-odele-landing/img/298ddf2dba19.jpg" alt="Blouson matelassé réversible à carreaux"><figcaption>39,95 €</figcaption></figure><figure class="pce" style="left:80%;top:3.7%"><img src="https://alexh2323.github.io/maison-odele-landing/img/0ef84ee1f757.jpg" alt="Chemise à col claudine brodé"><figcaption>22,95 €</figcaption></figure><figure class="pce" style="left:80%;top:52.5%"><img src="https://alexh2323.github.io/maison-odele-landing/img/74e0dc642def.jpg" alt="Gilet en maille à col polo"><figcaption>25,95 €</figcaption></figure><figure class="pce" style="left:24%;top:74.7%"><img src="https://alexh2323.github.io/maison-odele-landing/img/8812d4b7aa5e.jpg" alt="Jupe à plis plats à carreaux et boucle"><figcaption>22,95 €</figcaption></figure><figure class="pce" style="left:58%;top:74.7%"><img src="https://alexh2323.github.io/maison-odele-landing/img/d636478168e8.jpg" alt="Ballerines en cuir"><figcaption>39,95 €</figcaption></figure></div><p>Le look Margaux<span>Le look complet <s>151,75 €</s> <b>121,40 €</b><em>−20 %</em></span></p></div></div>
+  <div class="nav"><button type="button" class="arw" id="prev" aria-label="Look précédent">‹</button><div class="dots" id="dots"></div><button type="button" class="arw" id="next" aria-label="Look suivant">›</button></div>
+</section>
+
+<section class="wrap hero2">
+  <p class="bf"><b>Une seule promo par an.</b> −20 % sur tous les looks, seulement pour le Black Friday.</p>
+  </section>
+
+<section class="wrap why">
+  <ul class="perks">
+    <li><span>Chaque pièce à <b>moins de 60 €</b></span></li>
+    <li><span>Tu choisis <b>24 h avant</b> tout le monde</span></li>
+    <li><span>Rien à payer aujourd'hui</span></li>
+  </ul>
+</section>
+
+<section class="wrap ugc">
+  <h2>Merci pour vos retours</h2>
+  <div class="ugc-track"><div class="ugc-inner"><figure><img src="https://alexh2323.github.io/maison-odele-landing/img/fc1c895c6c2c.jpg" alt="Photo cliente" loading="lazy"><figcaption>Claire M.</figcaption></figure><figure><img src="https://alexh2323.github.io/maison-odele-landing/img/640305764418.jpg" alt="Photo cliente" loading="lazy"><figcaption>Émilie G.</figcaption></figure><figure><img src="https://alexh2323.github.io/maison-odele-landing/img/f4ee7d9036c5.jpg" alt="Photo cliente" loading="lazy"><figcaption>Hélène R.</figcaption></figure><figure><img src="https://alexh2323.github.io/maison-odele-landing/img/1c8e9e005d26.jpg" alt="Photo cliente" loading="lazy"><figcaption>Laure D.</figcaption></figure><figure><img src="https://alexh2323.github.io/maison-odele-landing/img/a3af793a3215.jpg" alt="Photo cliente" loading="lazy"><figcaption>Anne-Sophie P.</figcaption></figure><figure><img src="https://alexh2323.github.io/maison-odele-landing/img/194a4b1ae71b.jpg" alt="Photo cliente" loading="lazy"><figcaption>Julie F.</figcaption></figure><figure><img src="https://alexh2323.github.io/maison-odele-landing/img/fc1c895c6c2c.jpg" alt="Photo cliente" loading="lazy"><figcaption>Claire M.</figcaption></figure><figure><img src="https://alexh2323.github.io/maison-odele-landing/img/640305764418.jpg" alt="Photo cliente" loading="lazy"><figcaption>Émilie G.</figcaption></figure><figure><img src="https://alexh2323.github.io/maison-odele-landing/img/f4ee7d9036c5.jpg" alt="Photo cliente" loading="lazy"><figcaption>Hélène R.</figcaption></figure><figure><img src="https://alexh2323.github.io/maison-odele-landing/img/1c8e9e005d26.jpg" alt="Photo cliente" loading="lazy"><figcaption>Laure D.</figcaption></figure><figure><img src="https://alexh2323.github.io/maison-odele-landing/img/a3af793a3215.jpg" alt="Photo cliente" loading="lazy"><figcaption>Anne-Sophie P.</figcaption></figure><figure><img src="https://alexh2323.github.io/maison-odele-landing/img/194a4b1ae71b.jpg" alt="Photo cliente" loading="lazy"><figcaption>Julie F.</figcaption></figure></div></div>
+</section>
+
+<section class="wrap team">
+  <h2>L'équipe Maison Odèle</h2>
+  <div class="team-stack" id="ts"><figure><img src="https://alexh2323.github.io/maison-odele-landing/img/8e57bbd6e654.jpg" alt="Notre studio, Paris" loading="lazy"><figcaption>Notre studio, Paris</figcaption></figure><figure><img src="https://alexh2323.github.io/maison-odele-landing/img/9d8d0fc4ca43.jpg" alt="Notre atelier d'expédition" loading="lazy"><figcaption>Notre atelier d'expédition</figcaption></figure><figure><img src="https://alexh2323.github.io/maison-odele-landing/img/a02e0d1adb4a.jpg" alt="Pop-up Paris" loading="lazy"><figcaption>Pop-up Paris</figcaption></figure></div>
+</section>
+
+<footer class="wrap">Maison Odèle · La collection fille · Mode enfant</footer>
+
+<div class="sticky"><a class="cta" href="#f">Je réserve mon accès −20 %</a></div>
+
+<script>
+document.getElementById('f').addEventListener('submit',function(e){
+  var em=document.getElementById('email');
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em.value)){e.preventDefault();em.setAttribute('aria-invalid','true');em.focus();return}
+  document.getElementById('go').disabled=true;
+});
+(function(){var c=document.getElementById('car');if(!c)return;var n=c.children.length,d=document.getElementById('dots');
+for(var i=0;i<n;i++){d.appendChild(document.createElement('i'))}
+function cur(){return Math.round(c.scrollLeft/c.clientWidth)}
+function paint(){var k=cur();[].forEach.call(d.children,function(e,j){e.className=j===k?'on':''})}
+function go(k){c.scrollTo({left:Math.max(0,Math.min(n-1,k))*c.clientWidth,behavior:'smooth'})}
+document.getElementById('prev').onclick=function(){go(cur()-1)};document.getElementById('next').onclick=function(){go(cur()+1)};
+c.addEventListener('scroll',paint,{passive:true});paint();})();
+(function(){var ts=document.getElementById('ts');if(!ts)return;
+var figs=Array.from(ts.querySelectorAll('figure'));if(figs.length<3)return;
+var roles=['front','back-l','back-r'];var idx=0;
+function assign(){for(var i=0;i<3;i++){var f=figs[(idx+i)%3];f.classList.remove('front','back-l','back-r');f.classList.add(roles[i])}}
+assign();setInterval(function(){idx=(idx+1)%3;assign()},3500)})();
+(function(){var q=location.search;if(q.indexOf('customer_posted=true')<0&&q.indexOf('contact%5Bemail%5D')<0)return;
+document.getElementById('go').hidden=true;document.getElementById('ok').hidden=false;document.getElementById('f').scrollIntoView({block:'center'})})();
+</script>
+</div>
