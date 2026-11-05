@@ -24,9 +24,9 @@
 
 <section class="wrap hero">
   <h1>Black Friday&nbsp;: <em>−20&nbsp;%</em> sur nos tenues complètes.</h1>
-  <form id="f" novalidate>
+  <form id="f" method="post" action="/contact#f" accept-charset="UTF-8" novalidate><input type="hidden" name="form_type" value="customer"><input type="hidden" name="utf8" value="✓"><input type="hidden" name="contact[tags]" value="liste-attente-bf,newsletter">
     <p class="fl">Laisse ton email, ton code −20 % arrive le jour de la vente.</p>
-    <div class="row"><label class="sr" for="email">Ton email</label><input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="ton@email.fr" required><button type="submit" id="go">Je réserve</button></div>
+    <div class="row"><label class="sr" for="email">Ton email</label><input id="email" name="contact[email]" type="email" inputmode="email" autocomplete="email" placeholder="ton@email.fr" required><button type="submit" id="go">Je réserve</button></div>
     <p class="ok" id="ok" hidden>C'est noté. Surveille ta boîte mail le jour de la vente.</p>
     <p class="fine">Zéro spam · 24 h d'accès avant tout le monde · du 36 au 48</p>
   </form>
@@ -66,11 +66,12 @@
 </div>
 <script>
 document.getElementById('f').addEventListener('submit',function(e){
-  e.preventDefault();
   var em=document.getElementById('email');
-  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em.value)){em.setAttribute('aria-invalid','true');em.focus();return}
-  document.getElementById('go').hidden=true;document.getElementById('ok').hidden=false;
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em.value)){e.preventDefault();em.setAttribute('aria-invalid','true');em.focus();return}
+  document.getElementById('go').disabled=true;
 });
+(function(){var q=location.search;if(q.indexOf('customer_posted=true')<0&&q.indexOf('contact%5Bemail%5D')<0)return;
+document.getElementById('go').hidden=true;document.getElementById('ok').hidden=false;document.getElementById('f').scrollIntoView({block:'center'})})();
 (function(){var c=document.getElementById('car');if(!c)return;var n=c.children.length,d=document.getElementById('dots');
 for(var i=0;i<n;i++){d.appendChild(document.createElement('i'))}
 function cur(){return Math.round(c.scrollLeft/c.clientWidth)}
