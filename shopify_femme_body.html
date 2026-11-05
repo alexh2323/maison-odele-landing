@@ -260,7 +260,6 @@
 document.getElementById('f').addEventListener('submit',function(e){
   var em=document.getElementById('email');
   if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em.value)){e.preventDefault();em.setAttribute('aria-invalid','true');em.focus();return}
-  document.getElementById('go').disabled=true;
 });
 (function(){var c=document.getElementById('car');if(!c)return;var n=c.children.length,d=document.getElementById('dots');
 for(var i=0;i<n;i++){d.appendChild(document.createElement('i'))}
