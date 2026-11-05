@@ -260,6 +260,7 @@
 document.getElementById('f').addEventListener('submit',function(e){
   var em=document.getElementById('email');
   if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em.value)){e.preventDefault();em.setAttribute('aria-invalid','true');em.focus();return}
+  try{sessionStorage.setItem('mo_sent',Date.now())}catch(_){}
 });
 (function(){var c=document.getElementById('car');if(!c)return;var n=c.children.length,d=document.getElementById('dots');
 for(var i=0;i<n;i++){d.appendChild(document.createElement('i'))}
@@ -273,7 +274,7 @@ var figs=Array.from(ts.querySelectorAll('figure'));if(figs.length<3)return;
 var roles=['front','back-l','back-r'];var idx=0;
 function assign(){for(var i=0;i<3;i++){var f=figs[(idx+i)%3];f.classList.remove('front','back-l','back-r');f.classList.add(roles[i])}}
 assign();setInterval(function(){idx=(idx+1)%3;assign()},3500)})();
-(function(){var q=location.search;if(q.indexOf('customer_posted=true')<0&&q.indexOf('contact%5Bemail%5D')<0)return;
+(function(){var q=location.search,t=0;try{t=+sessionStorage.getItem('mo_sent')||0;sessionStorage.removeItem('mo_sent')}catch(_){}if(q.indexOf('customer_posted=true')<0&&q.indexOf('contact%5Bemail%5D')<0&&!(t&&Date.now()-t<120000))return;
 document.getElementById('go').hidden=true;document.getElementById('ok').hidden=false;document.getElementById('f').scrollIntoView({block:'center'})})();
 </script>
 </div>
