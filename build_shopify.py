@@ -47,7 +47,9 @@ def build(g):
     k = body.rindex('</script>')
     body = body[:k] + "(function(){var q=location.search;if(q.indexOf('customer_posted=true')<0&&q.indexOf('contact%5Bemail%5D')<0)return;\ndocument.getElementById('go').hidden=true;document.getElementById('ok').hidden=false;document.getElementById('f').scrollIntoView({block:'center'})})();\n" + body[k:]
     head = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Montserrat:wght@600&display=swap">\n'
-    out = head + '<style>\n' + scope(css) + '\n' + INTEG + '</style>\n<div id="mo">\n' + body.strip() + '\n</div>\n'
+    reset = '#mo *{box-sizing:border-box}#mo h1,#mo h2,#mo h3,#mo p,#mo button,#mo label{letter-spacing:normal;text-transform:none}\n'
+    integ = INTEG.replace(reset.strip(), '')   # le reset du theme passe AVANT le CSS de la page, sinon il efface les majuscules du titre
+    out = head + '<style>\n' + reset + scope(css) + '\n' + integ + '</style>\n<div id="mo">\n' + body.strip() + '\n</div>\n'
     assert not re.search(r'data:image/(jpeg|png|webp)', out)
     open(f'{R}/shopify_{g}_body.html', 'w').write(out); return len(out)
 if __name__ == '__main__':
